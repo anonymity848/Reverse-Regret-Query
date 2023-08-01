@@ -53,7 +53,7 @@ Step 2: Compile this project
   make
   ``` 
   
-Step 3: run this project
+Step 3: Run this project
  ------------
  We have set some settings in config.txt
  You can build an index with setting "buildidx" in config.txt and run as:

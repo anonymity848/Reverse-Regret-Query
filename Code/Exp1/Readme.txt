@@ -13,7 +13,7 @@ c. Algorithm APC-AC
 d. Algorithm EPT 
 	1. It works for the general case of RRQ. 
 	2. The code is in folder HDSP.
-d. Algorithm LPCTA
+e. Algorithm LPCTA
 	1. It is an existing algorithm used for comparison. 
 	2. The code is in folder LPCTA. 
 
