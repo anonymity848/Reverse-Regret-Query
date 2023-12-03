@@ -11,6 +11,12 @@ export const SET_SCORE = "SET_SCORE";
 export const SET_NAME = "SET_NAME";
 export const SET_EMAIL = "SET_EMAIL";
 export const SET_INTERACTION_RESULT = "SET_INTERACTION_RESULT";
+export const SET_EST_U = "SET_EST_U";
+
+export const setEstU = approU => ({
+  type: SET_EST_U,
+  approU
+});
 
 export const setInteractionResult = interactionResults => ({
   type: SET_INTERACTION_RESULT,

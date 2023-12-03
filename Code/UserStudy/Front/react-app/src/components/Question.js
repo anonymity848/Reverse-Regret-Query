@@ -6,7 +6,8 @@ import {
   setLeftPoints,
   setScore,
   prunePoints,
-  updateConvexHull
+  updateConvexHull, 
+  setEstU
 } from "../actions";
 import {
   array2Vector2D,
@@ -80,6 +81,8 @@ class Question extends React.Component {
     this.props.setLeftPoints(vector2Array(Indicess));
     const Scores = this.runner.getScore();
     this.props.setScore(vector2Array(Scores));
+    const Uvector = this.runner.getU();
+    this.props.setEstU(vector2Array(Uvector));
     this.runner.delete();
     this.props.showResult(this.state.interRR);
 };
@@ -137,14 +140,15 @@ return (
 }
 }
 
-const mapStateToProps = ({ labels, candidates, mask, attributes, numLeftPoints, mode, scores }) => ({
+const mapStateToProps = ({ labels, candidates, mask, attributes, numLeftPoints, mode, scores, approU }) => ({
     labels,
     candidates,
     mask,
     attributes,
     numLeftPoints,
     mode,
-    scores
+    scores, 
+    approU
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -154,6 +158,7 @@ const mapDispatchToProps = dispatch => ({
   },
   setLeftPoints: indices => { dispatch(setLeftPoints(indices));},
   setScore: scores => { dispatch(setScore(scores));},
+  setEstU: Uvector => { dispatch(setEstU(Uvector))},
   prunePoints: (indices, step) => { dispatch(prunePoints(indices, step));},
   updateConvexHull: vertices => {dispatch(updateConvexHull(vertices)); }
 });

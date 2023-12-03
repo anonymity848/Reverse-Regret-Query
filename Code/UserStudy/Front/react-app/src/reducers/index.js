@@ -12,8 +12,21 @@ import {
   SET_SCORE,
   SET_NAME,
   SET_EMAIL,
-  SET_INTERACTION_RESULT
+  SET_INTERACTION_RESULT, 
+  SET_EST_U
 } from "../actions";
+
+
+const approU = (state = null, action) => {
+  switch (action.type) {
+    case SET_EST_U:
+      return action.approU;
+    default:
+      return state;
+  }
+
+}
+
 
 const activeComponent = (state = "Welcome", action) => {
   switch (action.type) {
@@ -196,5 +209,6 @@ export default combineReducers({
   scores,
   userName,
   userEmail,
-  interactionResults
+  interactionResults, 
+  approU
 });

@@ -75,6 +75,8 @@ class Result extends React.Component {
     }
 
     const present = [];
+    present.push(this.props.approU);
+    present.push("\n");
     for(let i = 0; i < this.props.leftPoints.length; ++i)
     {
       present.push(this.pointsScoreRanking[i].map((x, j) => { return (x); }));
@@ -97,7 +99,6 @@ class Result extends React.Component {
       output: present,
       checkboxValues: checkboxValues
     };
-
 
   }
   
@@ -285,7 +286,7 @@ class Result extends React.Component {
       };
 
       
-      fetch('http://121.43.49.206:4000/save-text', {
+      fetch('http://39.108.168.228:4000/save-text', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -419,7 +420,8 @@ const mapStateToProps = ({
   scores,
   userName,
   userEmail,
-  interactionResults
+  interactionResults, 
+  approU
 }) => ({
   labels,
   candidates,
@@ -430,7 +432,8 @@ const mapStateToProps = ({
   scores,
   userName,
   userEmail,
-  interactionResults
+  interactionResults, 
+  approU
 });
 
 const mapDispatchToProps = dispatch => ({
